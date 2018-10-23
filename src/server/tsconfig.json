@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"target": "esnext",
+		"outDir": "../../dist/server",
+	},
+	"include": [
+		"**/*"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
