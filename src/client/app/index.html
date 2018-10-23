@@ -1,8 +1,72 @@
-<html>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
 	<head>
-		
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>My AngularJS App</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		THIS IS THE SITE
+		<!--Every Page will have the title bar-->
+		<div class = "title_bar">
+			<!--Titlebar contains logo and a couple links-->
+			<div class = "logo-img"></div>
+			<div class = "title_links">
+			<div class = title_link id = "home">Home</div>
+			<div class = title_link id = "Football">Football</div>
+			<div class = title_link id = "Soccer">Soccer</div>
+			<div class = title_link id = "Baseball">Baseball</div>
+			
+			</div>
+		</div>
+		<div class = "main">
+			
+			<div class = "page-title">
+				<h1 class = "page-title-label">Welcome to Second String</h1>
+			</div>
+			<div class = "container">
+				<!--Container is will have two components, the blog and the widgets-->
+				<div class = "content">
+					<h1 class = "blog-title">Second String Blog</h1>
+					<div class = "blog-content">
+						<!--this is a placeholder blog, will be dynamically read later-->
+						<div class = "blog-post">
+							<p class = "blog-name" style = "font-size:25px; font-weight:bold">This is blog 1</p>
+							<p class = "author">Author: <span class = "author-name">Gabe</span></p>
+							<p class = "blog-time"><span class = "glyphicon glyphicon-time"></span>Posted at 10pm</p>
+							<p class = "blog-text">Gabe is a cool ass guy who should get a raise</p>
+						</div>
+						<div class = "blog-post">
+							<p class = "blog-name" style = "font-size:25px; font-weight:bold">This is blog 1</p>
+							<p class = "author">Author: <span class = "author-name">Gabe</span></p>
+							<p class = "blog-time"><span class = "glyphicon glyphicon-time"></span>Posted at 10pm</p>
+							<p class = "blog-text">Gabe is a cool ass guy who should get a raise</p>
+						</div>
+					</div>
+				</div>
+				<div class = "widget-bar">
+					<div class = "widget" id = "wsearch">
+						<p class = "widget-label">Search</p>
+						<div class = "input-group">
+							<input type = "text" class = "search-input">
+							<span class = "input-group-button">
+								<button class = "btn btn-default" type = "button">
+									<span class = "glyphicon glyphicon-search"></span>
+								</button>
+							</span>
+						</div>
+					</div>
+					<div class = "widget" id = "wsort">WSort</div>
+					<div class = "widget" id = "wnote">Wnote</div>
+				</div>
+			</div>
+		</div>
+
+		<div class = "footer">Angular seed app: v<span app-version></span></div>
 	</body>
 </html>
