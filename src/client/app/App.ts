@@ -17,7 +17,15 @@ class App
 	constructor(){
 		this.blogSection = document.querySelector(".blog-content");
 		this.blogController = new BlogController(this.blogSection);
-		this.blogController.PopulateBlogs();
+		this.AddEventListeners();
+	}
+
+	private AddEventListeners(){
+		let searchBar = document.querySelector(".search-input") as HTMLInputElement;
+		let searchButton = document.querySelector("#search-button") as HTMLButtonElement;
+		searchButton.onclick = () => {
+			this.blogController.GetBlogsByKeyword(searchBar.value);
+		}
 	}
 }
 
