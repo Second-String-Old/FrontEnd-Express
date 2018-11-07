@@ -4,6 +4,7 @@ import * as compression from "compression";
 import * as bodyParser from "body-parser";
 import * as dotenv from "dotenv";
 import * as path from "path";
+import * as NewsAPI from "newsapi";
 
 // Let the process crash on unhandled promises
 process.on('unhandledRejection', err => { throw err; });
@@ -11,6 +12,7 @@ process.on('unhandledRejection', err => { throw err; });
 dotenv.config();
 
 const app = express();
+const newsapi = new NewsAPI(process.env.NEWS_API);
 
 app.use(compression());
 app.use(bodyParser.json({limit: '50mb'}));
@@ -25,23 +27,21 @@ app.get("/statpage", (req, res, next) => {
 	express.static("dist/client")(req, res, next);	
 });
 //gets for functions
-app.get("/getBlogs", (req,res) => {
-	console.log(req);
-	res.send(
-	[
-		{
-			blog_name: "Gabes Test Blog",
-			author: "Gabriel Vande Hei",
-			date: "today",
-			text: "Gabe is the best, hit that boi up"
-		},
-		{
-			blog_name: "Gabes Test Blog 2",
-			author: "Gabriel Vande Hei",
-			date: "today",
-			text: "Gabe is the best best, hit that boi up"
-		}
-	]);
+app.post("/getBlogs", async (req,res) => {
+	//console.log(req);
+	//use web news api
+	let blogs = await newsapi.v2.topHeadlines({
+		sources: "bleacher-report"
+	});
+	if(blogs.status === "ok"){
+		console.log(blogs.articles);
+		res.send(blogs.articles);
+	}
+	else{
+		console.error("Problem with fetching blogs");
+		res.send([]);
+	}
+
 });
 
 

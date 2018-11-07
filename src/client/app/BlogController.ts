@@ -1,3 +1,5 @@
+import { json } from "body-parser";
+
 export class BlogController{
     private blogContainer:HTMLDivElement;
     private blogList: any; //this will be an array of blog objects
@@ -6,28 +8,41 @@ export class BlogController{
     constructor(container:HTMLDivElement){
         this.blogContainer = container;
         this.blogMap = {};
-        this.FetchBlogs().then(() => {this.PopulateBlogs(this.blogList)});
+        this.FetchBlogs();
     }
     /**
      * FetchBlogs: Gets array of blog objects from server
      */
-    public async FetchBlogs(){
+    public async FetchBlogs(search: string = ""){
         //fetch the blogs
-		const response = await fetch("/getBlogs",
-		{
-			method: "GET",
-			headers: {
-				"Content-Type" : 'application/JSON'
-			}
-		});
-
+        let response;
+        if(search === ""){
+            response = await fetch("/getBlogs",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type" : 'application/JSON'
+                },
+                body: JSON.stringify({})
+            });
+        }
+        else{
+            response = await fetch("/getBlogs",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type" : 'application/JSON'
+                },
+                body: JSON.stringify({
+                    keywords: search
+                })
+            });
+        }
         let blogs = await response.json();
+        this.ClearBlogs();
         console.log(blogs);
         this.blogList = blogs;
-        for(let i=0; i<this.blogList.length;i++){
-            this.CreateBlogIdentifiers(this.blogList[i]);
-        }
-        
+        this.PopulateBlogs(this.blogList);
     }
 
     /**
@@ -52,19 +67,18 @@ export class BlogController{
      * @returns HTMLElement, representing a blog post
      */
     private FormatBlogs(blog:any): HTMLElement{
-        const blogName = blog.blog_name;
-        const blogAuth = blog.author;
-        const blogTime = blog.date;
-        const blogText = blog.text;
 
         let blogDiv = document.createElement("div");
         blogDiv.className = "blog-post";
+        blogDiv.onclick = () => {
+            let win = window.open(blog.url, '_blank');
+            win.focus();
+        }
         blogDiv.innerHTML = `
-        <p class = "blog-name" style = "font-size:25px; font-weight:bold">`+blogName+`</p>
-        <p class = "author">Author: <span class = "author-name">`+blogAuth+`</span></p>
-        <p class = "blog-time"><span class = "glyphicon glyphicon-time"></span>`+blogTime+`</p>
-        <p class = "blog-text">`+blogText+`</p>`
-
+        <p class = "blog-name" style = "font-size:25px; font-weight:bold">`+blog.title+`</p>
+        <p class = "author">Author: <span class = "author-name">`+blog.author+`</span></p>
+        <p class = "blog-time"><span class = "glyphicon glyphicon-time"></span>`+blog.publishedAt+`</p>
+        <p class = "blog-text">`+blog.description+`</p>`
         return blogDiv;
     }
 
