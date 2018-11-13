@@ -22,11 +22,309 @@
       <div class = title_link id = "Baseball">Baseball</div>
       
     </div>
-  </div>
-  <div class = "main">
-    <!--PUT YOUR HTML HERE-->
-  </div>
+    </div>
 
-  <div class = "footer">Angular seed app: v<span app-version></span></div>
-</body>
+  <div class = "main">
+      <head>
+      <title>Sort a HTML Table Alphabetically</title>
+      </head>
+      <body>
+        <br><br><br><br><br><br>
+        <a href="#QBTable">QB</a>
+        <a href="#RBTable">RB</a>
+        <a href="#WRTable">WR</a>
+        <h2>Quarter Backs</h2>
+        <table class="StatTable" id="QBTable">
+          <tr>
+            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+            <th onclick="sortTable(0, 'QBTable')">Name</th>
+            <th onclick="sortTable(1,'QBTable')">Team</th>
+            <th onclick="sortTable(2,'QBTable')">Passing Yards</th>
+            <th onclick="sortTable(3,'QBTable')">Passing TDs</th>
+            <th onclick="sortTable(4,'QBTable')">Passing Attempts</th>
+            <th onclick="sortTable(5,'QBTable')">Passing Completions</th>
+            <th onclick="sortTable(6,'QBTable')">Interceptions</th>
+          </tr>
+          <tr>
+            <td>Fitzpatrick, Ryan</td>
+            <td>TB</td>
+            <td>406</td>
+            <td>0</td>
+            <td>41</td>
+            <td>29</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Wentz, Carson</td>
+            <td>PHI</td>
+            <td>360</td>
+            <td>2</td>
+            <td>44</td>
+            <td>32</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Trubisky, Mitchell</td>
+            <td>CHI</td>
+            <td>355</td>
+            <td>3</td>
+            <td>30</td>
+            <td>23</td>
+            <td>0</td>
+          </tr>
+          <!--------------------------->
+          <tr>
+            <td>Ryan,Matt</td>
+            <td>ATL</td>
+            <td>406</td>
+            <td>0</td>
+            <td>41</td>
+            <td>29</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Roethlisberger, Ben</td>
+            <td>PIT</td>
+            <td>360</td>
+            <td>2</td>
+            <td>44</td>
+            <td>32</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Bortles, Blake</td>
+            <td>JAX</td>
+            <td>355</td>
+            <td>3</td>
+            <td>30</td>
+            <td>23</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Goff, Jared</td>
+            <td>LA</td>
+            <td>406</td>
+            <td>0</td>
+            <td>41</td>
+            <td>29</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Luck, Andrew</td>
+            <td>IND</td>
+            <td>360</td>
+            <td>2</td>
+            <td>44</td>
+            <td>32</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Stafford, Matthew</td>
+            <td>DET</td>
+            <td>355</td>
+            <td>3</td>
+            <td>30</td>
+            <td>23</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Prescott, Dak</td>
+            <td>DAL</td>
+            <td>406</td>
+            <td>0</td>
+            <td>41</td>
+            <td>29</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Brees, Drew</td>
+            <td>NO</td>
+            <td>360</td>
+            <td>2</td>
+            <td>44</td>
+            <td>32</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>Brady, Tom</td>
+            <td>NE</td>
+            <td>355</td>
+            <td>3</td>
+            <td>30</td>
+            <td>23</td>
+            <td>0</td>
+          </tr>        
+        </table> 
+        <h2>Running Backs</h2>
+        <table class="StatTable" id="RBTable">
+          <tr>
+            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+            <th onclick="sortTable(0, 'RBTable')">Name</th>
+            <th onclick="sortTable(1,'RBTable')">Team</th>
+            <th onclick="sortTable(2,'RBTable')">Rushing Yards</th>
+            <th onclick="sortTable(3,'RBTable')">Rushing TDs</th>
+            <th onclick="sortTable(4,'RBTable')">Carries</th>
+          </tr>
+          <tr>
+            <td>Chubb, Nick</td>
+            <td>CLE</td>
+            <td>176</td>
+            <td>1</td>
+            <td>33</td>
+          </tr>        
+          <tr>
+            <td>Elliot, Ezikiel</td>
+            <td>DAL</td>
+            <td>151</td>
+            <td>1</td>
+            <td>19</td>
+          </tr>        
+          <tr>
+            <td>Gurley, Todd</td>
+            <td>LA</td>
+            <td>120</td>
+            <td>1</td>
+            <td>16</td>
+          </tr>
+          <tr>
+            <td>Ingram, Mark</td>
+            <td>NO</td>
+            <td>104</td>
+            <td>0</td>
+            <td>13</td>
+          </tr>                
+          <tr>
+            <td>Johnson, David</td>
+            <td>ARI</td>
+            <td>98</td>
+            <td>1</td>
+            <td>21</td>
+          </tr>                
+        </table> 
+        <h2>Recievers</h2>
+        <table class="StatTable" id="WRTable">
+          <tr>
+            <!--When a header is clicked, run the sortTable function, with a parameter, 0 for sorting by names, 1 for sorting by country:-->  
+            <th onclick="sortTable(0, 'WRTable')">Name</th>
+            <th onclick="sortTable(1,'WRTable')">Team</th>
+            <th onclick="sortTable(2,'WRTable')">Recieving Yards</th>
+            <th onclick="sortTable(3,'WRTable')">Recieving TDs</th>
+            <th onclick="sortTable(4,'WRTable')">Receptions</th>
+          </tr>
+          <tr>
+            <td>Ertz, Zac</td>
+            <td>PHI</td>
+            <td>145</td>
+            <td>2</td>
+            <td>14</td>
+          </tr>
+          <tr>
+            <td>Robinson, Allen</td>
+            <td>CHI</td>
+            <td>133</td>
+            <td>2</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Hill, Tyreke</td>
+            <td>KC</td>
+            <td>117</td>
+            <td>2</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Jones, Julio</td>
+            <td>ATL</td>
+            <td>107</td>
+            <td>1</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <td>Edelman, Julian</td>
+            <td>NE</td>
+            <td>104</td>
+            <td>0</td>
+            <td>9</td>
+          </tr>       
+          <tr>
+            <td>Cooks, Brandon</td>
+            <td>NO</td>
+            <td>100</td>
+            <td>0</td>
+            <td>10</td>
+          </tr>         
+        </table> 
+        <script>
+          function sortTable(n, pos) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById(pos);
+            switching = true;
+            //Set the sorting direction to ascending:
+            dir = "asc"; 
+            /*Make a loop that will continue until
+            no switching has been done:*/
+            while (switching) {
+              //start by saying: no switching is done:
+              switching = false;
+              rows = table.rows;
+              /*Loop through all table rows (except the
+              first, which contains table headers):*/
+              for (i = 1; i < (rows.length - 1); i++) {
+                //start by saying there should be no switching:
+                shouldSwitch = false;
+                /*Get the two elements you want to compare,
+                one from current row and one from the next:*/
+                x = rows[i].getElementsByTagName("TD")[n];
+                y = rows[i + 1].getElementsByTagName("TD")[n];
+                /*check if the two rows should switch place,
+                based on the direction, asc or desc:*/
+                if (dir == "asc" && n < 2) {
+                  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch= true;
+                    break;
+                  }
+                } else if (dir == "desc" && n < 2) {
+                  if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
+                }
+                else if (dir == "asc" && n >= 2) {
+                  if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch= true;
+                    break;
+                  }
+                } else if (dir == "desc" && n >= 2) {
+                  if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                    //if so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
+                }
+              }
+              if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                //Each time a switch is done, increase this count by 1:
+                switchcount ++;      
+              } else {
+                /*If no switching has been done AND the direction is "asc",
+                set the direction to "desc" and run the while loop again.*/
+                if (switchcount == 0 && dir == "asc") {
+                  dir = "desc";
+                  switching = true;
+                }
+              }
+            }
+          }
+        </script>
+          
+      </body>
+          
+<div class = "footer">Angular seed app: v<span app-version></span></div>
 </html>

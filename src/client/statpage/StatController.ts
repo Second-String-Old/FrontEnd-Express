@@ -38,7 +38,7 @@ export class StatController{
         return stats;
     }
 
-    private Formatstats(player:any): HTMLElement{
+    private FormatStats(player:any): HTMLElement{
         const playerFName = player.lname;
         const playerLName = player.fname;
         const playerTeam = player.team;
