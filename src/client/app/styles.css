@@ -1,0 +1,55 @@
+.content{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10%;
+	/* margin-right: 10%; */
+	width: 55%;
+	padding-left: 10px;
+	border-radius: 10px;
+}
+
+.blog-title{
+    margin-bottom: 20px;
+}
+
+.blog-post{
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    min-width: 400px;
+    max-height: 200px;
+}
+
+.blog-post-icontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.blogs-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.blog-image{
+    height: 90%;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.tspan{
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+}
+
+#text-flex{
+    margin-right: 10px;
+}
+
+.ticon{
+    margin-right: 5px;
+    height: 100%;
+}

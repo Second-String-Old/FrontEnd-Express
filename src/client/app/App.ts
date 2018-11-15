@@ -1,5 +1,7 @@
 import "./styles.css";
 import "../common/styles.css";
+import "../images/time.svg"
+import "../images/search.svg"
 
 import {BlogController} from "./BlogController";
 
@@ -24,7 +26,7 @@ class App
 		let searchBar = document.querySelector(".search-input") as HTMLInputElement;
 		let searchButton = document.querySelector("#search-button") as HTMLButtonElement;
 		searchButton.onclick = () => {
-			this.blogController.GetBlogsByKeyword(searchBar.value);
+			//add search functionality?
 		}
 	}
 }

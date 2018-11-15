@@ -1,4 +1,3 @@
-import { json } from "body-parser";
 
 export class BlogController{
     private blogContainer:HTMLDivElement;
@@ -70,32 +69,54 @@ export class BlogController{
 
         let blogDiv = document.createElement("div");
         blogDiv.className = "blog-post";
-        blogDiv.onclick = () => {
+        blogDiv.onclick = () => { //open the real site if blog is clicked
             let win = window.open(blog.url, '_blank');
             win.focus();
         }
-        blogDiv.innerHTML = `
-        <p class = "blog-name" style = "font-size:25px; font-weight:bold">`+blog.title+`</p>
-        <p class = "author">Author: <span class = "author-name">`+blog.author+`</span></p>
-        <p class = "blog-time"><span class = "glyphicon glyphicon-time"></span>`+blog.publishedAt+`</p>
-        <p class = "blog-text">`+blog.description+`</p>`
-        return blogDiv;
-    }
 
-    /**
-     * Populates an object where the keys are keywords, and the values are a list
-     * of blog objects related to keywords.
-     * TODO: make case insensitive, use partials instead of full, store index instead of full blog
-     * @param blog the blog object to be identified
-     * @modifies this.blogmap
-     */
-    private CreateBlogIdentifiers(blog:any){
-        if(blog.blog_name){
-            if(this.blogMap[blog.blog_name] == null){
-                this.blogMap[blog.blog_name] = [];
-            }
-            this.blogMap[blog.blog_name].push(blog);
+        let textflex = document.createElement("div");
+        textflex.className = "blog-post-icontainer";
+        textflex.id = "text-flex"
+
+        let imgflex = document.createElement("div");
+        imgflex.className = "blog-post-icontainer";
+        imgflex.id = "imgflex";
+
+        if(blog.title != null){
+            let title = document.createElement("p");
+            title.className = 'blogs-title';
+            title.innerText = blog.title;
+            textflex.appendChild(title);
         }
+        if(blog.urlToImage != null){
+            let img = document.createElement("img");
+            img.className = "blog-image";
+            img.src = blog.urlToImage;
+            img.alt = "Image";
+            imgflex.appendChild(img);
+        }
+        if(blog.author != null){
+            let author = document.createElement('p');
+            author.className = "blog-author";
+            author.innerText = "Author: "+blog.author+"\n";
+            textflex.appendChild(author);
+        }
+        if(blog.publishedAt != null){
+            let time = document.createElement('p');
+            time.className = "blog-time";
+            let realtime = this.formatTime(blog.publishedAt);
+            time.innerHTML = '<span class = "tspan"><img class = "ticon" src = "/static/images/time.svg">'+realtime[0]+"  "+realtime[1]+"</span>";
+            imgflex.appendChild(time);
+        }
+        if(blog.description != null){
+            let desc = document.createElement("p");
+            desc.className = "blog-text";
+            desc.innerText = blog.description;
+            textflex.appendChild(desc);
+        }
+        blogDiv.appendChild(textflex);
+        blogDiv.appendChild(imgflex);
+        return blogDiv;
     }
 
     /**
@@ -107,15 +128,18 @@ export class BlogController{
         }
     }
 
-    /**
-     * GetBlogsByKeyword: a very simple implementations to search and return blogs mapped to a keyword
-     * @param word the keyword to search the map for
-     */
-    public GetBlogsByKeyword(word:string){
-        this.ClearBlogs();
-        console.log(this.blogMap);
-        if(this.blogMap[word]){
-            this.PopulateBlogs(this.blogMap[word]);
+    private formatTime(timestring: string): Array<string>{
+        let timearr: Array<string> = [];
+        let splittedarr = timestring.split("T");
+        console.log(splittedarr);
+        if(splittedarr.length < 2){
+            return timearr;
         }
+        let time = splittedarr[1].split(":");
+        if(time.length < 3){
+            return timearr;
+        }
+        let realtime = time[0]+":"+time[1];
+        return [splittedarr[0],realtime];
     }
 }
