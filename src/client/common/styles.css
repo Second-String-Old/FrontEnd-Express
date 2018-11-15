@@ -3,6 +3,11 @@ html{
 	padding: 0px;
 }
 
+a{
+	color: white;
+	text-decoration: none;
+}
+
 body{
 	height: 100%;
 	width: 100%;
