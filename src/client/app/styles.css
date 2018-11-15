@@ -16,15 +16,21 @@
     border-radius: 10px;
     background-color: #fff;
     padding: 15px;
+    margin-bottom: 15px;
     cursor: pointer;
     display: flex;
     flex-direction: row;
     min-width: 400px;
-    max-height: 200px;
+}
+
+#imgflex{
+    height: 200px;
+    width:auto;
 }
 
 .blog-post-icontainer{
     display: flex;
+    width: fill-available;
     flex-direction: column;
 }
 
