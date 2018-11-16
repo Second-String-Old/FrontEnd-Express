@@ -28,13 +28,17 @@ app.get("/statpage", (req, res, next) => {
 });
 //gets for functions
 app.post("/getBlogs", async (req,res) => {
-	//console.log(req);
+	console.log(req.body);
 	//use web news api
-	let blogs = await newsapi.v2.topHeadlines({
-		sources: "bleacher-report"
+	let blogs = await newsapi.v2.everything({
+		sources: "bleacher-report",
+		q: req.body.keywords,
+		page: req.body.page || 1,
+		language: "en",
+		sortBy: "relevancy"
 	});
 	if(blogs.status === "ok"){
-		console.log(blogs.articles);
+		//console.log(blogs.articles);
 		res.send(blogs.articles);
 	}
 	else{

@@ -22,7 +22,10 @@ export class BlogController{
                 headers: {
                     "Content-Type" : 'application/JSON'
                 },
-                body: JSON.stringify({})
+                body: JSON.stringify({
+                    keywords: "",
+                    page: 1
+                })
             });
         }
         else{
@@ -33,7 +36,8 @@ export class BlogController{
                     "Content-Type" : 'application/JSON'
                 },
                 body: JSON.stringify({
-                    keywords: search
+                    keywords: search,
+                    page: 1
                 })
             });
         }

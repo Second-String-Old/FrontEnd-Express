@@ -28,8 +28,13 @@
     width:auto;
 }
 
+.input-group{
+    height: 30px;
+}
+
 #srimg{
-    
+    height: 100%;
+    width: auto;
 }
 
 .blog-post-icontainer{

@@ -27,6 +27,7 @@ class App
 		let searchButton = document.querySelector("#search-button") as HTMLButtonElement;
 		searchButton.onclick = () => {
 			//add search functionality?
+			this.blogController.FetchBlogs(searchBar.value || "");
 		}
 	}
 }
