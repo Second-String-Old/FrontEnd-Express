@@ -179,7 +179,11 @@ width: 100%;
 float: bottom;
 
 }
-.StatTable {
+
+.card{
+	margin:1% 4%;
+}
+/*.StatTable {
 	border-spacing: 0;
 	width: 100%;
 	border: 1px solid black;
@@ -198,4 +202,4 @@ th, td {
 tr:nth-child(even) {
 	background-color: #f2f2f2
 }
-
+*/

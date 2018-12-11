@@ -2,57 +2,93 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
-<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Second String</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	<body>
-		<!--Every Page will have the title bar-->
-		<div class = "title_bar">
-			<!--Titlebar contains logo and a couple links-->
-			<div class = "logo-img"></div>
-			<div class = "title_links">
-				<a href="/" class = title_link id = "Home">Home</a>
-				<a href="/statpage" class = title_link id = "Football">Football</a>
-				<div class = title_link id = "Soccer">Soccer</div>
-				<div class = title_link id = "Baseball">Baseball</div>
-			
-			</div>
-		</div>
-		<div class = "main">
-			
-			<div class = "page-title">
-				<h1 class = "page-title-label">Second String</h1>
-				<h2>Sports by Numbers</h2>
-			</div>
-			<div class = "container">
-				<!--Container is will have two components, the blog and the widgets-->
-				<div class = "content">
-					<h1 class = "blog-title">Second String Blog</h1>
-					<div class = "blog-content"></div>
-				</div>
-				<div class = "widget-bar">
-					<div class = "widget" id = "wsearch">
-						<p class = "widget-label">Search</p>
-						<div class = "input-group">
-							<input type = "text" class = "search-input">
-							<span class = "input-group-button">
-								<button id = "search-button" class = "btn btn-default" type = "button">
-									<img id = "srimg" src = "/static/images/search.svg"></span>
-								</button>
-							</span>
-						</div>
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Second String</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+</head>
+
+<body>
+	<!--Every Page will have the title bar-->
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #193441;">
+		<a class="navbar-brand" href="../">
+			<img src="/static/images/strategyLight.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+			Second String
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
+		 aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="../">News<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+					 aria-haspopup="true" aria-expanded="false">
+						Sports Stats
+					</a>
+					<div class="dropdown-menu" style="background-color: #193441;" aria-labelledby="navbarDropdownMenuLink">
+						<a class="nav-link" href="#">Baseball Stats (N/A) <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="#">BasketBall Stats (N/A) <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="/statpage">Football Stats <span class="sr-only">(current)</span></a>
 					</div>
-					<div class = "widget" id = "wsort">WSort</div>
-					<div class = "widget" id = "wnote">Wnote</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/Second-String">GitHub</a>
+				</li>
+			</ul>
+			<span class="navbar-text">
+				Second String: Sports by Numbers
+			</span>
+		</div>
+	</nav>
+	<div class="main">
+
+		<div class="page-title">
+			<h1 class="page-title-label">Second String</h1>
+			<h2>Sports by Numbers</h2>
+		</div>
+		<div class="container">
+			<!--Container is will have two components, the blog and the widgets-->
+			<div class="content">
+				<h1 class="blog-title">Second String Blog</h1>
+				<div class="blog-content"></div>
+			</div>
+			<div class="widget-bar">
+				<div class="widget" id="wsearch">
+					<p class="widget-label">Search</p>
+					<div class="input-group">
+						<input type="text" class="search-input">
+						<span class="input-group-button">
+							<button id="search-button" class="btn btn-default" type="button">
+								<img id="srimg" src="/static/images/search.svg"></span>
+						</button>
+						</span>
+					</div>
 				</div>
+				<div class="widget" id="wsort">WSort</div>
+				<div class="widget" id="wnote">Wnote</div>
 			</div>
 		</div>
-		<div class = "footer">Second String 2018<span app-version></span></div>
-	</body>
+	</div>
+	<div class="footer">Second String 2018<span app-version></span></div>
+	<div>Icons made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+</body>
+
 </html>
