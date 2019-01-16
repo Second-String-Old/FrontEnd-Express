@@ -9,7 +9,7 @@
     "build-web": "node node_modules/webpack/bin/webpack --config src/client/webpack.dev.js --mode development",
     "build-web-prod": "node node_modules/webpack/bin/webpack --config src/client/webpack.prod.js --mode production",
     "watch": "node node_modules/typescript/bin/tsc -w -p src/server/tsconfig.json & node node_modules/webpack/bin/webpack --config src/client/webpack.dev.js --display-modules --mode development --watch & node node_modules/nodemon/bin/nodemon dist/server/main.js",
-    "start": "node dist/server/main.js"
+    "start": "node node_modules/webpack/bin/webpack --config src/client/webpack.dev.js --mode development && node node_modules/typescript/bin/tsc -p src/server/tsconfig.json && node dist/server/main.js"
   },
   "repository": {
     "type": "git",
