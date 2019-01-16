@@ -17,4 +17,4 @@
 
 > npm run build-server
 
-> npm start-npm 
+> npm start

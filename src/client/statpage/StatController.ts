@@ -14,11 +14,11 @@ export class StatController{
         console.log("Populating Table");
 
         //fetch the blogs
-		const response = await fetch("/getStats",
+		const response = await fetch("https://flask-ss-heroku.herokuapp.com/players/QB/?week=1",
 		{
 			method: "GET",
 			headers: {
-				"Content-Type" : 'application/JSON'
+                "Content-Type" : 'application/JSON'
 			}
 		});
 
