@@ -23,14 +23,13 @@ export class StatController{
 		});
 
         let stats = await response.json();
-        console.log(stats);
 
         if(stats.length == 0){
             this.statTable.innerHTML = `No players can be found`;
         }
         else{
-            for(let i = 0; i<stats.length;i++){
-                this.statTable.appendChild(this.FormatStats(stats[i]));
+            for(let i = 0; i<stats.Data.length;i++){
+                this.statTable.appendChild(this.FormatStats(stats.Data[i]));
             }
         }
 
@@ -39,18 +38,16 @@ export class StatController{
     }
 
     private FormatStats(player:any): HTMLElement{
-        const playerFName = player.lname;
-        const playerLName = player.fname;
-        const playerTeam = player.team;
-        const playerPos = player.pos;
-
-        let statTableDiv = document.createElement("div");
+        let statTableDiv = document.createElement("tr");
         statTableDiv.className = "stat-table";
         statTableDiv.innerHTML = `
-        <p class = "player-name" style = "font-size:25px; font-weight:bold">`+playerLName+`, `+playerFName+`</p>
-        <p class = "player-team">Author: <span class = "author-name">`+playerTeam+`</span></p>
-        <p class = "player-pos"><span class = "glyphicon glyphicon-time"></span>`+playerPos+`</p>`
-
+        <td class = "player-name">`+player.player_name+`</td>
+        <td class = "player-team">`+player.player_team+`</td>
+        <td>`+player.passing_yds+`</td>
+        <td>`+player.passing_tds+`</td>
+        <td>`+player.passing_att+`</td>
+        <td>`+player.passing_cmp+`</td>
+        <td>`+player.passing_int+`</td>`
         return statTableDiv;
     }
 

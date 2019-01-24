@@ -17,7 +17,7 @@ class StatApp
 	 * Creates an instance of the app, constructing recognizer, event handler, and some dom elements
 	 */
 	constructor(){
-		this.statTable= document.querySelector(".blog-content");
+		this.statTable= document.querySelector(".qb-table");
 		this.statController = new StatController(this.statTable);
 		this.statController.PopulateTable();
 	}
